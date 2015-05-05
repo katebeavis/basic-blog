@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<html>
+<head>
+  <title>Kate's Rails Blog</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  <%= auto_discovery_link_tag(:atom, posts_path(:atom)) %>
+</head>
+<body>
+  <%= render partial: 'layouts/header' %>
 
-    <title>Kate's Rails Blog</title>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-    <%= auto_discovery_link_tag(:atom, posts_path(:atom)) %>
-  </head>
-  <body>
-    <div id='main'>
-      <%= yield %>
-    </div>
-  </body>
+<div id="main">
+  <%= yield %>
+</div>
+  <%= render partial: 'layouts/footer' %>
+</body>
 </html>
