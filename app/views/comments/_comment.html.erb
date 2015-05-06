@@ -6,4 +6,5 @@
     <br/>
     <%= comment.body %>
   </p>
+  <%= link_to 'Delete', [@post, comment], method: :delete %>
 <% end %>
